@@ -23,7 +23,7 @@ dependencies:
   iconly: ^1.0.1
   image_picker: ^1.0.2
   intl: ^0.18.1
-  # lottie: ^2.6.0
+  lottie: ^1.4.3
   open_file: ^3.3.2
   path_provider: ^2.1.0
   provider: ^6.0.5
