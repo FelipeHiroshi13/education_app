@@ -1,5 +1,6 @@
 import 'package:education_app/core/res/media_res.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class PageUnderConstructions extends StatelessWidget {
   const PageUnderConstructions({super.key});
@@ -16,7 +17,11 @@ class PageUnderConstructions extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Container(),
+          child: Center(
+            child: Lottie.asset(
+              MediaRes.pageUnderConstruction,
+            ),
+          ),
         ),
       ),
     );
