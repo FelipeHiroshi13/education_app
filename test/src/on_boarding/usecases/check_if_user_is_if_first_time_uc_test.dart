@@ -20,11 +20,25 @@ void main() {
     'Should call the [OnBoardingRepo.cacheFirstime] '
     'and return the right data',
     () async {
-      // GIVEN
       when(() => repository.cacheFirstTime()).thenAnswer(
-        (_) async => const Left(
-            ServerFailure(message: 'Unknown Error Occured', statusCode: 500)),
+        (_) async => Left(
+          ServerFailure(message: 'Unknown Error Occured', statusCode: 500),
+        ),
       );
+
+      final result = await usecase();
+
+      expect(
+        result,
+        equals(
+          Left<Failure, dynamic>(
+            ServerFailure(message: 'Unknown Error Occured', statusCode: 500),
+          ),
+        ),
+      );
+
+      verify(() => repository.cacheFirstTime()).called(1);
+      verifyNoMoreInteractions(repository);
     },
   );
 }
